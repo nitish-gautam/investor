@@ -20,17 +20,17 @@ Sample data is provided in `data.csv`. Assume a sole currency of GBP, and ignore
 
 The solution is designed to demonstrate knowledge of the following layers of a software system:
 
-Data Layer - Storing and managing investor and commitment data.
-Backend Services - FastAPI provides REST APIs for retrieving investor and commitment data.
-Web Applications - React frontend fetches data from the backend and visualizes it with filtering options.
+1. Data Layer - Storing and managing investor and commitment data.
+2. Backend Services - FastAPI provides REST APIs for retrieving investor and commitment data.
+3. Web Applications - React frontend fetches data from the backend and visualizes it with filtering options.
 
 ## Tech Stack Used
 
-Frontend: React (Material UI for styling, Chart.js for data visualization)
-Backend: Python (FastAPI)
-Database: SQLite (for simplicity, can be replaced with PostgreSQL or MongoDB in production)
-API Documentation: Swagger (http://localhost:8000/docs)
-Containerization: Docker for deployment
+1. Frontend: React (Material UI for styling, Chart.js for data visualization)
+2. Backend: Python (FastAPI)
+3. Database: SQLite (for simplicity, can be replaced with PostgreSQL or MongoDB in production)
+4. API Documentation: Swagger (http://localhost:8000/docs)
+5. Containerization: Docker for deployment
 
 ```
 API Docs: http://localhost:8000/docs
