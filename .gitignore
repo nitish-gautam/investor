@@ -3,8 +3,22 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore OS and editor-specific files
+.DS_Store
+.idea/
+.vscode/
+
 # C extensions
 *.so
+# Ignore dependencies
+node_modules/
+venv
+
+# Ignore cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.log
 
 # Distribution / packaging
 .Python
