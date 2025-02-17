@@ -1,0 +1,33 @@
+# Specify Docker Compose version
+version: "3.8"
+
+# Define the services (backend and frontend)
+services:
+  # Backend Service (FastAPI)
+  backend:
+    container_name: investor-backend-1 # Set a fixed container name for easy reference
+    build:
+      context: . # Use the current directory as the build context
+      dockerfile: backend/Dockerfile # Specify the Dockerfile for backend
+
+    ports:
+      - "8000:8000" # Map container's port 8000 to host machine's port 8000
+
+    volumes:
+      - ./backend/investors.db:/app/backend/investors.db # Persist the database file outside the container to prevent data loss
+
+    environment:
+      - DB_URL=sqlite:///./investors.db # Set environment variable for database connection string
+
+  # Frontend Service (React with Nginx)
+  frontend:
+    container_name: investor-frontend-1 # Set a fixed container name for easy reference
+    build:
+      context: . # Use the current directory as the build context
+      dockerfile: frontend/Dockerfile # Specify the Dockerfile for frontend
+
+    ports:
+      - "3000:3000" # Map container's port 3000 to host machine's port 3000
+
+    depends_on:
+      - backend # Ensure the backend service starts before the frontend
